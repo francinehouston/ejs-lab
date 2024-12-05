@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%category%>Menu</title>  <!-- Set title dynamically -->
+   
+</head>
+<body>
+    <%- include('./partials/nav') %>
+    <nav>
+        <a href="/">Home</a>
+        <a href="/menu">Full Menu</a>
+      </nav>
+      
+
+    <!-- views/partials/nav.ejs -->
+    <h1><% category $> Menu</h1> <!-- Display category name as a heading -->
+ <div class = "menu" >
+    <% menuItems.forEach(function(item) { &>
+        <div class ="menu.items">
+        <h2><%= item.name %></h2> <!-- Item name -->
+        <p> Price: #<%= item.price.toFixed(2)%></p> <!-- Item price -->
+        <p>Rating: <%= item.rating %>/5</p> <!-- Item rating -->
+        <p><%= item.details %></p> <!-- Item details -->
+    </div>
+ <%  }); %>
+</div>
+
+</body>
+</html>
